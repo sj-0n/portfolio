@@ -1,0 +1,945 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&subset=korean');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700,700i');
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,300,300i,400,400i,800,800i');
+
+/*
+    Nanym+Gothic
+        font-family: "Nanum Gothic", sans-serif;
+    Open+Sans
+        font-family: "Open Sans", sans-serif;
+    raleway
+        font-family: "Raleway", sans-serif;
+*/
+
+/* reset */
+	html,body {margin:0; padding:0; font-family:"나눔고딕","Nanum Gothic","Helvetica Neue",Arial,sans-serif; font-weight:normal; font-size:12px; height:100%; color:#333; -webkit-text-size-adjust:none; position:relative; line-height:1.2;}
+	dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote {margin:0; padding:0; -webkit-text-size-adjust:none;}
+	th,td,input,textarea,select {font-size:12px; color:#333; font-family:"나눔고딕","Nanum Gothic","Helvetica Neue",Arial,sans-serif; -webkit-text-size-adjust:none;}
+	th,td {word-break:break-all; word-wrap:break-word; -webkit-text-size-adjust:none;}
+	table {border-spacing:0; border-collapse:collapse; -webkit-text-size-adjust:none; border:0; table-layout:fixed;}
+	address,caption,cite,code,dfn,var {font-style:normal; font-weight:normal; -webkit-text-size-adjust:none;}
+	em {font-style:normal; -webkit-text-size-adjust:none;}
+	ol,ul,li {list-style:none;}
+	h1,h2,h3,h4,h5,h6 {font-size:100%;}
+	abbr,acronym {border:0;}
+	hr,legend,caption {visibility:hidden; overflow:hidden; line-height:0; width:0; height:0; margin:0; padding:0;}
+	img,fieldset {border:0 none;}
+	label {cursor:pointer;}
+	a {color:inherit;}
+	a:link, a:visited, a:hover {color:inherit; text-decoration:none;}
+	a:active {text-decoration:none;}
+	input,img {vertical-align:middle;}
+
+
+
+/*layout*/
+
+
+
+
+
+
+/*header*/
+
+#header_container{
+    position: fixed;
+    left: 0;    right: 0;    top:0;
+    width: 100%;    height: 80px;
+    z-index: 3000;
+    background-color: #2a353b;
+}
+
+#header_container .header_inner{
+    width: 1280px;
+    height: 100%;
+    position:relative;
+    margin: 0 auto;
+}
+
+#header_container .logo{
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    margin-top: -21px;
+}
+#header_container .logo img{
+    width: 90px;
+/*    height: 42px;*/
+}
+
+#header_container .gnb_wrap{
+    position: absolute;
+    top: 50%;
+    margin-top: -18px;
+    right: 30px;
+}
+
+
+#header_container .gnb_wrap li{
+    float:left;
+    margin-left: 40px;
+    position: relative;
+    
+}
+
+#header_container .gnb_wrap ul li:first-child{
+    margin-left: 0;
+}
+
+#header_container .gnb_wrap ul li a{
+    display: block;
+    color: white;
+    font-size: 18px;
+    height: 36px;
+    line-height: 36px;
+    font-family: "Raleway";
+    text-transform: uppercase;
+}
+
+#header_container .gnb_wrap ul li a:hover{
+    color:#e84a5f;
+    /*text-decoration: underline;*/
+}
+#header_container .gnb_wrap ul li a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    /*top: 100%; 박스 바깥쪽으로 생성 */
+    bottom: 0; /*박스 안 제일 아래에 생성*/
+    border: 1px solid #e84a5f;
+    transition: all 1s;
+    transform: scale(0,1);
+    opacity: 0.3;
+}
+#header_container .gnb_wrap ul li:hover a::after{
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+/*intro*/
+
+.intro_section{
+    height: 100%;
+    padding-top: 80px;
+    box-sizing: border-box;
+    /*패딩80px를 제외한 100프로!*/
+    min-width: 1280px;
+}
+
+.intro_section .intro_inner{
+    height: 100%;
+    background: url(./img/bg_intro02.jpg) center center no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    text-align: center;
+    position: relative;
+   /* 백그라운드는 백그라운드 단축 먼저 한 다음에 사이즈 코드가 와야함. 사이즈 먼저하고 백그라운드 이미지를 주면 안먹힘.*/
+}
+
+.intro_section .intro_inner::before{
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.65);
+/*        부모자식의 배경 포지션을 따라가게 됨, 부모의 포지션이 없으면 부모의부모까지 따라감. 그래서 intro_inner에 포지션이 없다면, 이 dim효과가 내비까지 겹쳐져 보여질 것임.부모자식의 배경 포지션을 따라가게 됨, 부모의 포지션이 없으면 부모의부모까지 따라감. 그래서 intro_inner에 포지션이 없다면, 이 dim효과가 내비까지 겹쳐져 보여질 것임.*/
+    
+}
+.intro_section .intro_inner::after{
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    /*박스 수직정렬하는 방법 중 하나임,. 부모가 내비 80px를 제외한 영역을 가지고 있으니 height가 100퍼이고  vertical-align: 이 middle이니 내비를 제외한 영역 가운데로 오게 되는 거임. 
+*/}
+
+/*html5작성하고 css3로 작성하려면 after앞에 클론 2개가 들어가는게 정확한 것임. 근데 문제점은 html5에서만 작동하고 인터넷익스플로러 8 이상에서만 작동됨.*/
+.intro_section .intro_inner .content{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+/*    before에 position을 주어서 before에 검정 오퍼시티 있는 배경이 맨 위로 올라오게 되었는데, 그러면 흰글씨도 감춰져있게 되니까 다시 맨 위로 올려주기 위해서 position:relative를 주는 것.*/
+    color: #fff;
+}
+
+.intro_section .intro_inner .content h2{
+    font-size: 86px;
+    font-family: "Open Sans";
+}
+
+.intro_section .intro_inner .content p{
+    font-size: 24px;
+    font-family: "Raleway";
+    font-weight: 100;
+    font-style: italic;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+/*body_with_section*/
+
+.section{
+    min-width: 1290px;
+    min-height: 800px;
+    box-sizing: border-box;
+    padding: 85px 0;
+}
+
+.section .title{
+    font-family: "Raleway";
+    font-size: 40px;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ff847c;
+    margin-top: 20px;
+}
+
+.section .subText{
+    font-family: "Raleway";
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 300;
+    text-align: center;
+    color:#999;
+    margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*body_about*/
+
+#ab{
+    background-color: #f8f9fa;
+}
+
+#ab .content_wrap{
+    width: 900px;
+    min-height: 350px;
+    padding-left: 450px;
+    box-sizing: border-box;
+    margin: 120px auto 0;
+          /*상    좌우  하*/
+    position: relative;
+}
+
+
+
+
+
+
+
+/*프로필 사진*/
+
+
+#ab .content_wrap .profile{
+    position: absolute;
+    border-radius: 50%;
+    /*왼쪽 위에서부터 오른쪽 위, 오른쪽 아래, 왼쪽 아래 순서로 50px 20px 10px 30px 로 줄 수 있음*/
+    width: 300px;
+    height: 300px;
+    left: 25px;
+    top: 0;
+    box-shadow: 4px 4px 10px #ccc;
+/*             x좌표 y좌표 spread color*/
+    overflow: hidden;
+}
+
+#ab .content_wrap .profile img{
+    width: 100%;
+    height: 100%;
+}
+
+
+#ab .content_wrap .contBox .name{
+    font-size: 32px;
+    font-family: "Open Sans", sans-serif;
+}
+
+#ab .content_wrap .contBox .job{
+    color: #666;
+    font-size: 18px;
+    display: block;
+    margin-top: 10px;
+    font-family: "Raleway";
+    
+}
+
+#ab .content_wrap .contBox .sns {
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+#ab .content_wrap .contBox .sns li{
+    /*float: left;*/
+    display: inline-block;
+    margin-right: 15px;
+}
+
+#ab .content_wrap .contBox .sns li a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+#ab .content_wrap .contBox .sns li a:hover{
+    background-color:#99b898;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*소개부분*/
+#ab .content_wrap .infoBox{
+    margin-top: 15px;
+}
+
+#ab .content_wrap .infoBox table{
+    width: 100%;
+}
+
+#ab .content_wrap .infoBox table th{
+    width: 95px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: left;
+    vertical-align: top;
+/*    education부분에만 하고 싶으면 eduxation이 포함되어있는 tr에만 class를 따로 부여해 vertical-align을 주면 됨. 근데 th,td전부 상단정렬하고 싶으면 table이 있는 div에  display:table-cell 한 후 vertical align을 주면 되는데, 이럴땐 table만 있는 div를 줘야하고, cell크기를 하나하나 직접 입력해야 하며 다소 복잡한 부분이 생김. */
+    padding: 6px 0;
+}
+
+#ab .content_wrap .infoBox table td{
+    color: #666;
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 6px 0;
+}
+
+/*패딩은 th랑 td에 모두 줘서 위아래 여백이 있도록 만들기~*/
+
+#ab .content_wrap .infoBox table a{
+    display: block;
+    text-decoration: underline;
+    text-decoration-color: #99b898;
+    color: #666;
+}
+
+
+
+/*a끼리는 마진을 따로 안줘도 살짝씩 떨어져있음. 그럴땐 font-size:0px; 를 줘야 여백이 없어보임. 이런게 이론에 없는 실무라고 하신다,, 그리고 0은 0자체이기 때문에 단위같은거 없어도 괜찮음*/
+
+
+
+
+
+/*body_skillt*/
+
+#sk .wrap{
+    font-size: 0;
+    text-align: center;
+    margin-top: 160px;
+}
+
+#sk .wrap li{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 28px;
+    margin: 0 30px;
+
+}
+
+#sk .wrap li .ico{
+    display: block;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#sk .wrap li .ico::after{
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+#sk .wrap li h2{
+    display: block;
+    margin-top: 20px;
+    font-family: "Open Sans";
+    letter-spacing: -1px;
+}
+
+/*마우스 갖다두면 이미지 커지게 하는 코드 (아래)*/
+#sk .wrap li .ico:hover img{
+    transform: scale(1.1,1.1) rotate(10deg);
+}
+/*두개 다 같은 값이라면 그냥 scale(1.1)써도 무관함. 그리고 크기 각도 그런거 띄어쓰기만 하면 중복사용가능~*/
+
+#sk .wrap li .ico img{
+    transition: all 0.3s;
+}
+
+
+
+
+
+/*skill 아이콘 컬러*/
+
+#sk .wrap li .ico.ps{
+    background-color: #001d26;
+    border: 12px solid #00c8ff;
+    
+}
+
+#sk .wrap li .ico.il{
+    background-color: #261300;
+    border: 12px solid #ff7c00;
+    
+}
+
+#sk .wrap li .ico.in{
+    background-color: #280012;
+    border: 12px solid #ff3f94;
+    
+}
+
+#sk .wrap li .ico.ae{
+    background-color: #1f003f;
+    border: 12px solid #cf91ff;
+    
+}
+
+#sk .wrap li .ico.max{
+    background-color: #09a1a1;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*body_portfolio*/
+
+#pf{
+    background-color: #f8f9fa;
+}
+
+#pf .wrap{
+    text-align: center;
+    width: 1200px;
+    margin: 40px auto 0;
+    overflow: hidden;
+}
+
+#pf .wrap li{
+    box-sizing: border-box;
+/*    overflow: hidden;*/
+    width: 360px;
+    margin: 20px;
+    height: 490px;
+    float: left;
+    border: 1px solid #d3d3d3;
+}
+
+#pf .wrap li a{
+    display: block;
+    height: 100%;
+    font-size: 12px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+/*포트폴리오 이미지 부분*/
+
+#pf .wrap .img{
+    width: 358px;
+    height: 358px;
+    position: relative;
+    overflow: hidden;
+}
+
+#pf .wrap .img img{
+    width: 358px;
+    height: 358px;
+    position: center center;
+}
+
+#pf .wrap li{
+    background-color: #fff;
+}
+
+#pf .wrap li h2{
+    /*display: none;*/
+    left: 0; right: 0; top: 0; bottom: 0;
+    position: absolute;
+    font-size: 26px;
+    text-transform: uppercase;
+    color: #fff;
+    /*background-color: rgba(235,29,72,0.8);*/
+    line-height: 358px;
+    text-align: center;
+    font-family: "Raleway" , sans-serif;
+    font-weight: 100;
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+/*선 공통*/
+#pf .wrap li h2::after, #pf .wrap li h2::before{
+    content: "";
+    position: absolute;
+    left: 5px; right: 5px; top: 5px; bottom: 5px;
+    transition: all 1s;
+}
+#pf .wrap li h2::after{
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    transform: scale(1,0);
+    opacity: 0;
+    
+}
+#pf .wrap li h2::before{
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    transform: scale(0,1);
+    opacity: 0;
+}
+
+#pf .wrap a:hover h2:before{
+    transform: scale(1,1);
+    opacity: 1;
+}
+#pf .wrap a:hover h2::after{
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+
+#pf .wrap a:hover h2{
+    /*display: block;*/
+    /*position: absolute;*/
+    background-color: rgba(0,0,0,0.6);
+    opacity: 1;
+}
+
+#pf .wrap a:hover .img img{
+    transform: scale(1.1);
+}
+#pf .wrap a .img img{
+    transition: all 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*포트폴리오 텍스트부분*/
+
+#pf .wrap .pfli .text{
+    font-size: 12px;
+    margin: 0 5px;
+}
+
+#pf .wrap .pfli .text h3{
+    font-size: 18px;
+    font-family: "Nanum Gothic", sans-serif;
+    text-align: left;
+    margin: 10px;
+    color: black;
+    font-weight: 700;
+}
+
+#pf .wrap .pfli .text .type{
+    margin: 10px;
+    color: #ff847c;
+    font-family: "Raleway", sans-serif;
+    font-weight: 00;
+    text-transform: uppercase;
+}
+
+#pf .wrap .pfli .text .txt{
+    margin: 10px;
+    color: #999;
+    font-family: "Nanum Gothic", sans-serif;
+    line-height: 16px;
+    height: 48px;
+    overflow: hidden;
+    
+ text-overflow:ellipsis;
+-webkit-line-clamp:3; /* 셋째줄에서 ... 표시 */
+-webkit-box-orient: vertical;
+display: -webkit-box;
+word-wrap:break-word;
+-o-text-overflow:ellipsis;
+}
+
+    
+    
+    
+    
+    
+
+
+
+/*푸터*/
+#footer_container{
+    width: 100%;
+}
+#footer_container p{
+    background-color: #2a353b;
+    height: 80px;
+    color: #fff;
+    text-align: center;
+    line-height: 80px;
+    font-size: 14px;
+    font-family: "Raleway" , sans-serif;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.m{
+    display: none;
+}
+
+
+
+
+
+/*반응형(모바일)*/
+
+
+
+@media(max-width:1279px){
+
+    /*레이아웃*/
+    #header_container .header_inner{
+        box-sizing: border-box;
+        padding-top: 10px;
+        width: auto;
+    }
+    #header_container .logo{
+        position: static;
+        margin: 0;
+        text-align: center;
+    }
+    #header_container .logo img{
+        height: 30px;
+        width: auto;
+    }
+    #header_container .gnb_wrap{
+        position: static;
+        margin: 0;
+    }
+    #header_container .gnb_wrap ul li{
+        margin-left: 0;
+        width: 33.3%;
+        text-align: center;
+    }
+    #header_container .gnb_wrap ul li:first-child{
+        width: 33.4%;
+    }
+    #header_container .gnb_wrap ul li a{
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+    }
+    #body_container{
+        min-width: 0;
+    }
+    #footer_container{
+        min-width: 0;
+    }
+
+
+
+
+
+    /*내비게이션*/
+    #header_container .gnb_wrap ul li:hover a::after{
+        transform: scale(0.5 ,1);
+    }
+    #header_container .gnb_wrap ul li:hover .n_sk::after {
+        transform: scale(0.4,1);
+    }
+    #header_container .gnb_wrap ul li:hover .n_pf::after {
+        transform: scale(0.7,1);
+    }
+
+
+
+    /*인트로 부분*/
+    .intro_section{
+        min-width: 0;
+    }
+    .intro_section .intro_inner{
+        background-size: auto 100%;
+   }
+   .intro_section .intro_inner .content h2{
+    font-size: 36px;
+   }
+   .intro_section .intro_inner .content p{
+    font-size: 14px;
+   }
+   .intro_section .intro_inner .content p .m{
+    display: inline;
+   }
+
+
+
+
+
+
+    /*공통부분인 섹션*/
+    .section{
+        min-width: 0;
+        min-height:0;
+        padding: 30px 0;
+    }
+    .section .title{
+        font-size: 26px;
+        margin-top: 55px;
+    }
+    .section .subText{
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+
+
+
+
+/*소개부분*/
+    #ab .m{
+        display: inline;
+    }
+    #ab .content_wrap {
+        padding-left: 0;
+        width: auto;
+        margin-top: 40px;
+        text-align: center;
+    }
+    #ab .content_wrap .profile{
+        position: static;
+        margin: 0 auto;
+        width: 200px;
+        height: 200px;
+    }
+    #ab .content_wrap .contBox .sns{
+        text-align: center;
+        margin-top: 10px;
+    }
+    #ab .content_wrap .contBox .name{
+        font-size: 22px;
+        margin-top: 20px;
+    }
+    #ab .content_wrap .contBox .job{
+        font-size: 16px;
+        margin-top: : 20px;
+    }
+
+
+
+/*소개-텍스트부분*/
+    #ab .content_wrap .contBox .infoBo{
+        /*margin: 0 auto;*/
+    }
+    #ab .content_wrap .contBox .infoBox table{
+        text-align: center;
+        width:340px;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    #ab .content_wrap .contBox .infoBox th{
+        font-size: 12px;
+        width: 70px;
+    }
+    #ab .content_wrap .contBox .infoBox td{
+        font-size: 12px;
+        text-align: left;
+    }
+
+
+
+    
+
+/*스킬부분*/
+    #sk .wrap{
+        margin-top: 60px;
+    }
+    #sk .wrap li{
+        display: block;
+        margin:60px 0 0 0;
+    }
+    #sk .wrap li:first-child{
+        margin-top: 0;
+    }
+    #sk .wrap li:last-child{
+        margin-bottom: 40px;
+    }
+    #sk .wrap li .ico{
+        margin:0 auto;
+    }
+    #sk .wrap li h2{
+        font-size: 22px;
+        margin-top: 10px;
+    }
+
+
+
+
+
+
+/*포트폴리오부분*/
+    #pf .wrap{
+        width: auto;
+        /*margin-top: -40px;*/
+        /*li에서 준 마진을 없애기 위한 초기화 코드*/
+    }
+    #pf .wrap ul{
+        font-size: 0;
+        text-align: center;
+        padding: 0 20px;
+
+    }
+    #pf .wrap li{
+        float: none;
+        display: inline-block;
+        margin: 0;
+        vertical-align: top;
+        /*margin: 40px 20px 0 !important;*/
+        margin: 40px 20px 0;
+    }
+
+/*important로햇으면 전위에서 (3n+1)로 주었던 모든 클래스들보다 imporatant를 준 것이 우선순위로 효과가 먹어짐.*/
+
+
+
+
+/*푸터*/
+    #footer_container p{
+        font-size: 10px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+/*@media(max-width:619px){
+    #pf .wrap{
+        margin:0;
+     }
+    #pf .wrap ul{
+        margin: 60px 0;
+        padding: 0;
+    } 
+    #pf .wrap li{
+        margin: 20px 0;
+    } */
+
+@media(max-width:619px){
+    #pf .wrap .pfli{
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+     }
+     #pf .wrap .pfli .img{
+        width: 100%;
+        height: auto;
+     }
+     #pf .wrap .pfli .img img{
+        margin: 0 auto;
+        display: block;
+        position: center;
+     }
+ }
+
+
+ /*!important 는 계속 사용가능한가봄.. 위에서 margin에 important줬는데 아래에서도 그렇게 주면 아래께 먹힘*/

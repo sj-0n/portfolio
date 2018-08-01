@@ -1,10 +1,242 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>ddd</title>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- 기본값이 다 1:1인거고, width=device-width : 디바이스의 화면넓이를 따라가겠다라는 의미임 -->
+    <title>My Portfolio</title>
+    <link type="text/css" rel="stylesheet" href="default.css">
+    <link rel="shortcut icon" href="./img/favicon.ico">
 </head>
 <body>
-    <p>연습</p>
+	<!-- 헤더 시작 -->
+    <header id="header_container">
+        <div class="header_inner">
+            <h1 class="logo">
+                <a href="#">
+                    <img src="img/img_logo03.png" alt="로고">
+                </a>
+            </h1>
+            <nav class="gnb_wrap">
+                <ul>
+                    <li><a href="#ab" class="n_ab">about</a></li>
+                    <li><a href="#sk" class="n_sk">skill</a></li>
+                    <li><a href="#pf" class="n_pf">portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- 헤더 끝 -->
+    
+    
+    <!-- 인트로 시작 -->
+    <section class="intro_section">
+        <div class="intro_inner">
+           <div class="content">
+                <h2>My Portfolio</h2>
+                <p class="txt">
+                    " Welcome!<br class="m"> Thank you for visiting my home page<br class="m"> including my portfolio."<br>" If you are interested in my style, contact me."
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- 인트로 끝 -->
+    
+    
+    <!-- 바디 시작 -->
+    <div id="body_container">
+        <section class="section" id="ab">
+            <h2 class="title">about</h2>
+            <p class="subText">"Try not to become a man of success but <br class="m">rather try to become a man of value."</p>
+            <div class="content_wrap">
+                <img src="img/img_profile02.jpg" alt="프로필사진" class="profile">
+                <div class="contBox">
+                    <h3 class="name">Ji-yeon Sun</h3>
+                    <span class="job">Web Designer</span>
+                    <ul class="sns">
+                        <li>
+                            <a href="https://www.facebook.com/dsjiyeon" target="blank">
+                                <img src="img/ico_sns01.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/ico_sns02.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/sj_0n/" target="blank">
+                                <img src="img/ico_sns03.png">
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="infoBox">
+					    <table>
+                            <tbody>
+                                <tr>
+                                    <th>Birthday.</th>
+                                    <td>2000.12.04</td>
+                                </tr>
+                                <tr>
+                                    <th>Phone.</th>
+                                    <td><a href="tel:010-7191-4196">010-7191-4196</a></td>
+                                </tr>
+                                <tr>
+                                    <th>E-mail.</th>
+                                    <td>
+                                        <a href="mailto:sun001204@naver.com">sun001204@naver.com</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Education.</th>
+                                    <td>
+                                        2017.03 미림여자정보과학고등학교 입학<br>
+                                        2019.02 미림여자정보과학고등학교 졸업예정
+                                    </td>
+                                </tr>
+                            </tbody>
+					    </table>
+				    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="section" id="sk">
+            <h2 class="title">skill</h2>
+            <p class="subText">Lorem ipsum dolor sit amet consectetur.</p>
+            <div>
+                <ul class="wrap">
+                    <li>
+                        <span class="ico ps">
+                            <img src="img/img_skill01.png" alt="포토샵">
+                        </span>
+                        <h2>Photoshop</h2>
+                    </li>
+                    <li>
+                        <span class="ico il">
+                            <img src="img/img_skill02.png" alt="포토샵">
+                        </span>
+                        <h2>Illustrator</h2>
+                    </li>
+                    <li>
+                        <span class="ico in">
+                            <img src="img/img_skill03.png" alt="포토샵">
+                        </span>
+                        <h2>Indesign</h2>
+                    </li>
+                    <li>
+                        <span class="ico ae">
+                            <img src="img/img_skill04.png" alt="포토샵">
+                        </span>
+                        <h2>After Effects</h2>
+                    </li>
+                    <li>
+                        <span class="ico max">
+                            <img src="img/img_skill05.png" alt="포토샵">
+                        </span>
+                        <h2>3DS MAX</h2>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        
+        <section class="section" id="pf">
+            <h2 class="title">portfolio</h2>
+            <p class="subText">Lorem ipsum dolor sit amet consectetur.</p>
+            <div class="wrap">
+               <ul>
+                   <li class="pfli">
+                       <a href="#pf">
+                           <div class="img">
+                               <img src="img/img_work04.jpg" alt="섬네일" align="center">
+                               <h2>character design</h2>
+                           </div>
+                           <div class="text">
+                               <h3 class="title">가평의 별이와 청서</h3>
+                               <p class="type">character design</p>
+                               <p class="txt">가평의 원래 캐릭터이던 '잣돌이'의 문제점을 분석하여 찾아낸 후 보완점을 찾아내 리디자인한 캐릭터이다. 가평의 명소 중 하나인 자라섬에 '자라'를 본따 만들었다. 그렇다고 한다. 이걸 다 채우기에는 너무나도 생각이 안나고 힘든 일인거 같다는 생각이 들었다. 그래서 아무말이나 쓰고 있다고 한다.</p>
+                           </div>
+                       </a>
+                   </li>
+                   <li class="pfli">
+                       <a href="#pf">
+                           <div class="img">
+                               <img src="img/img_work05.jpg" alt="섬네일">
+                               <h2>typhography</h2>
+                           </div>
+                           <div class="text">
+                               <h3 class="title">말하는 고양이가 지금 내 앞에 있다</h3>
+                               <p class="type">typhography</p>
+                               <p class="txt">문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기</p>
+                           </div>
+                       </a>
+                   </li>
+                   <li class="pfli">
+                       <a href="#pf">
+                           <div class="img">
+                               <img src="img/img_work06.jpg" alt="섬네일">
+                               <h2>typhography</h2>
+                           </div>
+                           <div class="text">
+                               <h3 class="title">말하는 고양이가 지금 내 앞에 있다.</h3>
+                               <p class="type">typhography</p>
+                               <p class="txt">문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기</p>
+                           </div>
+                       </a>
+                   </li>
+                   <li class="pfli">
+                       <a href="https://sj-0n.github.io/Sympathize/" target="blank">
+                           <div class="img">
+                               <img src="img/img_work07.png" alt="섬네일">
+                               <h2>web design</h2>
+                           </div>
+                           <div class="text">
+                               <h3 class="title">애정으로 교감하다</h3>
+                               <p class="type">web design</p>
+                               <p class="txt">문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기문장채우기</p>
+                           </div>
+                       </a>
+                   </li>
+                   <li class="pfli">
+                       <a href="#pf">
+                           <div class="img">
+                               <img src="img/img_work06.jpg" alt="섬네일">
+                               <h2>card news</h2>
+                           </div>
+                           <div class="text">
+                               <h3 class="title">우주 끄트머리 문학별 하나</h3>
+                               <p class="type">card news</p>
+                               <p class="txt">"문학을 좋아하세요라는 질문에 좋아하는 사람은 88.5%. 그런데 ‘문학은 지겹다’, ‘그저 글이다’라는 이야기가 왜 나오는걸까? 문학을 좀 더 즐겁게 바라보는 사람들은 문학을 어떻게 생각하는걸까? 현대의 여러 문화콘텐츠를 통해 다양한 시각으로 바라본다면 문학을 단순한 종이뭉치가 아닌 공유하고 즐기는 하나의 예술로"</p>
+                           </div>
+                       </a>
+                   </li>
+                   <li class="pfli">
+                       <a href="#pf">
+                           <div class="img">
+                               <img src="img/img_work05.jpg" alt="섬네일">
+                               <h2>card news</h2>
+                           </div>
+                           <div class="text">
+                               <h3 class="title">백설공주와 알레르기</h3>
+                               <p class="type">card news</p>
+                               <p class="txt">"어릴 적 한번쯤은 접해본 동화를 꼽으라고 한다면 당연히 백설공주를 빼놓을 수 없다. 동화 속의 주인공들의 특별한 사연들과 숨겨진 이야기들을 통하여 일상에 필요한 정보들을 제공받아보자. 알레르기와 갱년기, 그리고 어린이 교육이라는 사회가 궁금해하는 정보!"</p>
+                           </div>
+                       </a>
+                   </li>
+               </ul>
+            </div>
+        </section>
+    </div>
+    <!-- 바디 끝 -->
+    
+    
+    <!-- 푸터 시작 -->
+    <div id="footer_container">
+        <p>Copyright ⓒ 2018. Ji-Yeon Sun. All right reserved.
+        </p>
+    </div>
+    <!-- 푸터 끝 -->
 </body>
 </html>
